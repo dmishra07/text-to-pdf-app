@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Text → PDF Converter</title>
+    <style>
+      /* Basic styling for the page */
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        margin: 40px;
+        max-width: 900px;
+      }
+      input, textarea, button {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+        margin: 10px 0;
+      }
+      textarea {
+        height: 320px;
+      }
+      button {
+        cursor: pointer;
+      }
+      .hint {
+        color: #666;
+        font-size: 14px;
+      }
+      .card {
+        border: 1px solid #eee;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Text → PDF Converter</h1>
+    <div class="card">
+      <form method="POST" action="/generate">
+        <label for="title">Title</label>
+        <input id="title" name="title" placeholder="e.g., My Notes" />
+
+        <label for="body">Body</label>
+        <textarea id="body" name="body" placeholder="Paste or type your content here..."></textarea>
+
+        <button type="submit">Generate PDF</button>
+      </form>
+      <div class="hint">Your PDF will be generated on the server and downloaded automatically.</div>
+    </div>
+  </body>
+</html>
